@@ -20,6 +20,16 @@ Copy .env.example to .env.local and fill local values. npm ci; npm run db:genera
 
 Use Coolify scheduled PostgreSQL backups, verify restore to a separate database, and retain the named volume. Before changing schema, back up PostgreSQL. Passwords use salted scrypt, sessions are random opaque tokens whose hashes are stored in PostgreSQL, and cookies are HttpOnly/SameSite with Secure on HTTPS. Owner checks do not trust caller identity headers. Login/setup attempts are limited in PostgreSQL. Content writes use optimistic revisions and an atomic audit entry.
 
-Gemini configuration uses server-only GEMINI_API_KEY and GEMINI_MODEL. The generator consumes supplied research notes and never auto-publishes. Google returned HTTP 503 and timed out during the prior live test; successful live generation remains to be confirmed after Coolify configuration.
+Gemini configuration uses server-only GEMINI_API_KEY and GEMINI_MODEL. The generator consumes supplied research notes and never auto-publishes. Live checks confirmed Gemini 3.1 Flash-Lite returns HTTP 200 with generated text, while Argon returned HTTP 429 (RESOURCE_EXHAUSTED) and Gemini 3.8 Flash timed out. Model listing alone does not prove quota availability.
 
 15 licensed real category photos retain source and license information. They are not claims of exact-model testing. See assets/product-originals/LICENSES.md and data/*photo-catalog.json.
+
+## ASIN article generation
+
+The generator accepts a US ASIN or Amazon.com product URL. AMAZON_CLIENT_ID and AMAZON_CLIENT_SECRET are server-only Amazon Creators API credentials; AMAZON_CREDENTIAL_VERSION selects 3.1 (NA), 3.2 (EU), or 3.3 (FE). AMAZON_PARTNER_TAG defaults to the site's existing public Associates tag. A text API key is separate from Amazon catalog access. No product title, photo or specification is fabricated when catalog access is unavailable.
+
+Official references: https://affiliate-program.amazon.com/creatorsapi/docs/en-us/get-started/using-curl and https://ai.google.dev/api/models. The app imports only the matching ASIN and real primary Amazon photo, attaches them to the draft, and uses a direct /dp/ASIN affiliate link in article pages. Expired product images are refreshed via Amazon; unavailable stale images are replaced with an unavailable notice, not a different product.
+
+Gemini models are discovered with the current server key; The configured available model is preferred; Argon is offered when the key lists it. The dashboard exposes a minimal connection test that verifies actual text generation separately from model listing. Keys are never sent to the browser. Temporary provider failures get one bounded retry, with clear permission, quota, model and timeout errors. On the website container, node scripts/check-provider.mjs performs the same minimal server-side check and prints only model names and status.
+
+Only the ASIN product reference is stored in article records and generation history. Catalog titles, features and image URLs are looked up server-side and cached in process memory for at most one hour; image binaries are never downloaded into the app. Generated editorial text is separate from the Amazon catalog cache.

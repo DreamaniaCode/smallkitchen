@@ -1,0 +1,1 @@
+export function geminiModels(settings:Record<string,any>,fetcher?:typeof fetch):Promise<{id:string;name:string}[]>;export function chooseGeminiModel(models:{id:string;name:string}[],preferred?:string,configured?:string):string;

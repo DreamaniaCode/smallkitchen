@@ -26,6 +26,13 @@ services:
       - OWNER_EMAILS=${OWNER_EMAILS:?}
       - SETUP_TOKEN=${SERVICE_PASSWORD_64_SETUP}
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
-      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.8-flash}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.1-flash-lite-preview}
+      - AMAZON_CLIENT_ID=${AMAZON_CLIENT_ID:-}
+      - AMAZON_CLIENT_SECRET=${AMAZON_CLIENT_SECRET:-}
+      - AMAZON_CREDENTIAL_VERSION=${AMAZON_CREDENTIAL_VERSION:-3.1}
+      - AMAZON_PARTNER_TAG=khalidwahbi-20
+      - AI_API_KEY=${AI_API_KEY:-}
+      - AI_MODEL=${AI_MODEL:-}
+      - AI_ENDPOINT=${AI_ENDPOINT:-}
 volumes:
   kitchen-postgres:
