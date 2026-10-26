@@ -1,0 +1,58 @@
+[
+  {
+    "id": "french-press",
+    "src": "/images/products/french-press.webp",
+    "alt": "Real glass French press holding brewed coffee",
+    "caption": "Real French press photographed by Corn cheese. Category example; exact model not verified.",
+    "author": "Corn cheese",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_press_with_coffee.jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Resized and converted to WebP",
+    "realPhoto": true,
+    "width": 1400,
+    "height": 1050
+  },
+  {
+    "id": "moka-pot",
+    "src": "/images/products/moka-pot.webp",
+    "alt": "Real moka coffee pot photographed on a kitchen surface",
+    "caption": "Real moka pot photographed by ajay_suresh. Category example; exact retail model not verified.",
+    "author": "ajay_suresh",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moka_Pot_(55013301353).jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Resized and converted to WebP",
+    "realPhoto": true,
+    "width": 800,
+    "height": 1200
+  },
+  {
+    "id": "grinder",
+    "src": "/images/products/grinder.webp",
+    "alt": "Real traditional hand-cranked coffee grinder beside coffee",
+    "caption": "Real traditional coffee grinder photographed by Artturi Mäntysaari. Historical category example, not a Hario Mini-Slim+.",
+    "author": "Artturi Mäntysaari",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_grinder_with_coffee.jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Resized and converted to WebP",
+    "realPhoto": true,
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "id": "coffee-maker",
+    "src": "/images/products/coffee-maker.webp",
+    "alt": "Real coffee cup and saucer with a coffee machine in the background",
+    "caption": "Coffee cup and machine photographed by www.Pixel.la Free Stock Photos. Category scene, not an identified Hamilton Beach FrontFill model.",
+    "author": "www.Pixel.la Free Stock Photos",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee-cup-kitchen-coffee-machine_(23697054474).jpg",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "changes": "Resized and converted to WebP",
+    "realPhoto": true,
+    "width": 1280,
+    "height": 853
+  }
+]

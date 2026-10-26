@@ -1,0 +1,11 @@
+.git
+node_modules
+.next
+.env*
+!.env.example
+generated
+backups
+previews
+*.tsbuildinfo
+assets/product-originals
+content-library

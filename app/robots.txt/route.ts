@@ -1,0 +1,1 @@
+import {siteOrigin} from '../../lib/site-url';export const dynamic='force-dynamic';export function GET(){return new Response('User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nSitemap: '+siteOrigin()+'/sitemap.xml\n',{headers:{'Content-Type':'text/plain'}});}

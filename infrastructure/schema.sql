@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS records(kind text NOT NULL,id text NOT NULL,data jsonb NOT NULL,revision integer NOT NULL DEFAULT 1,updated_at timestamptz NOT NULL,updated_by text NOT NULL,operation_id text NOT NULL,PRIMARY KEY(kind,id));
+CREATE TABLE IF NOT EXISTS audit_log(id text PRIMARY KEY,kind text NOT NULL,record_id text NOT NULL,action text NOT NULL,actor text NOT NULL,created_at timestamptz NOT NULL);
+CREATE TABLE IF NOT EXISTS generation_jobs(id text PRIMARY KEY,actor text NOT NULL,provider text NOT NULL,status text NOT NULL,started_at timestamptz NOT NULL,finished_at timestamptz,error text,result jsonb);
+CREATE UNIQUE INDEX IF NOT EXISTS one_active_generation_per_owner ON generation_jobs(actor) WHERE status='running';
+CREATE UNIQUE INDEX IF NOT EXISTS article_slug_unique ON records((data->>'slug')) WHERE kind='articles';
+CREATE TABLE IF NOT EXISTS owner_users(id text PRIMARY KEY,email text NOT NULL UNIQUE,password_hash text NOT NULL);
+CREATE TABLE IF NOT EXISTS owner_sessions(token_hash text PRIMARY KEY,user_id text NOT NULL REFERENCES owner_users(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL);
+CREATE INDEX IF NOT EXISTS owner_sessions_expiry ON owner_sessions(expires_at);
+CREATE TABLE IF NOT EXISTS auth_attempts(email text PRIMARY KEY,window_start timestamptz NOT NULL,count integer NOT NULL);

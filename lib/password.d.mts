@@ -1,0 +1,1 @@
+export function hashPassword(password:string):Promise<string>;export function verifyPassword(password:string,encoded:string):Promise<boolean>;export function tokenHash(token:string):string;export function safeTokenMatch(a:unknown,b:unknown):boolean;

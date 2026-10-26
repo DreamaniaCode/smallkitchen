@@ -1,0 +1,11 @@
+node_modules/
+.next/
+generated/
+.env*
+!.env.example
+*.tsbuildinfo
+backups/
+previews/
+assets/originals/
+assets/product-originals/*
+!assets/product-originals/LICENSES.md

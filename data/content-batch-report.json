@@ -1,0 +1,220 @@
+{
+  "articles": 30,
+  "published": 10,
+  "drafts": 20,
+  "bodyWords": 18190,
+  "realPhotos": 15,
+  "articlesWithRealPhotos": 30,
+  "checks": [
+    {
+      "id": "rice-cooker-half-cup-minimum",
+      "title": "Can a Rice Cooker Cook Half a Cup? Check the Minimum Batch",
+      "words": 588,
+      "image": "product-rice-cooker",
+      "issues": []
+    },
+    {
+      "id": "rice-cooker-cups-explained",
+      "title": "Rice Cooker Cups Explained: Dry Capacity vs Cooked Yield",
+      "words": 571,
+      "image": "product-rice-cooker",
+      "issues": []
+    },
+    {
+      "id": "rice-cooker-under-cabinet-clearance",
+      "title": "Rice Cooker Under a Cabinet? Measure the Operating Space",
+      "words": 575,
+      "image": "product-rice-cooker",
+      "issues": []
+    },
+    {
+      "id": "air-fryer-working-footprint",
+      "title": "Small Air Fryer Footprint: Include the Open Basket",
+      "words": 584,
+      "image": "product-air-fryer",
+      "issues": []
+    },
+    {
+      "id": "air-fryer-vs-toaster-oven-apartment",
+      "title": "Air Fryer vs Toaster Oven for a Small Apartment Kitchen",
+      "words": 576,
+      "image": "product-air-fryer",
+      "issues": []
+    },
+    {
+      "id": "rice-cooker-small-batches",
+      "title": "Rice Cooker for One: A Practical Buying Checklist",
+      "words": 570,
+      "image": "product-rice-cooker",
+      "issues": []
+    },
+    {
+      "id": "small-slow-cooker-size",
+      "title": "Small Slow Cooker Sizing: Match the Recipe Before the Quart Label",
+      "words": 586,
+      "image": "product-slow-cooker",
+      "issues": []
+    },
+    {
+      "id": "immersion-vs-countertop-blender-space",
+      "title": "Immersion Blender vs Countertop Blender: The Space Trade-Off",
+      "words": 613,
+      "image": "product-blender",
+      "issues": []
+    },
+    {
+      "id": "compact-electric-kettle-guide",
+      "title": "How to Choose a Compact Electric Kettle for a Small Kitchen",
+      "words": 598,
+      "image": "product-kettle",
+      "issues": []
+    },
+    {
+      "id": "countertop-induction-burner-checklist",
+      "title": "Countertop Induction Burner: What to Check Before Buying",
+      "words": 584,
+      "image": "product-cooktop",
+      "issues": []
+    },
+    {
+      "id": "mini-fridge-container-fit",
+      "title": "Meal-Prep Containers for a Mini Fridge: A Fit-First Guide",
+      "words": 642,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "shallow-drawer-lid-organizer",
+      "title": "Food Container Lid Organizers for Shallow Drawers",
+      "words": 652,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "stackable-vs-nesting-containers",
+      "title": "Stackable vs. Nesting Food Containers: Which Saves Space?",
+      "words": 640,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "glass-vs-plastic-meal-prep",
+      "title": "Glass vs. Plastic Meal-Prep Containers for Small Kitchens",
+      "words": 656,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "food-container-piece-count",
+      "title": "Food Storage Set Piece Counts: How Many Containers Do You Get?",
+      "words": 640,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "under-sink-around-pipes",
+      "title": "Under-Sink Organizers Around a Garbage Disposal: Measure First",
+      "words": 656,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "narrow-pantry-storage",
+      "title": "Narrow Pantry Storage: Choose Containers That Stay Accessible",
+      "words": 654,
+      "image": "product-food-containers",
+      "issues": []
+    },
+    {
+      "id": "collapsible-colander-small-kitchen",
+      "title": "Collapsible Colanders for Small Kitchens: What to Check",
+      "words": 649,
+      "image": "product-colander",
+      "issues": []
+    },
+    {
+      "id": "over-sink-drying-rack-fit",
+      "title": "Over-the-Sink Drying Racks: A Fit and Access Checklist",
+      "words": 643,
+      "image": "product-dish-rack",
+      "issues": []
+    },
+    {
+      "id": "cutting-board-storage-small-kitchen",
+      "title": "Cutting Board Storage for a Small Apartment Kitchen",
+      "words": 673,
+      "image": "product-cutting-board",
+      "issues": []
+    },
+    {
+      "id": "coffee-maker-low-cabinets",
+      "title": "Coffee Makers Under Low Cabinets: Refill Access Comes First",
+      "words": 615,
+      "image": "product-coffee-maker",
+      "issues": []
+    },
+    {
+      "id": "french-press-small-kitchen",
+      "title": "Choosing a French Press for a Small Kitchen",
+      "words": 610,
+      "image": "product-french-press",
+      "issues": []
+    },
+    {
+      "id": "moka-pot-vs-french-press",
+      "title": "Moka Pot vs French Press: Which Routine Fits a Small Kitchen?",
+      "words": 588,
+      "image": "product-moka-pot",
+      "issues": []
+    },
+    {
+      "id": "manual-coffee-grinder-storage",
+      "title": "Manual Coffee Grinders: Plan the Handle, Grounds and Storage",
+      "words": 578,
+      "image": "product-grinder",
+      "issues": []
+    },
+    {
+      "id": "compact-kitchen-scale-buying",
+      "title": "Compact Kitchen Scales: Readability Matters as Much as Size",
+      "words": 599,
+      "image": "product-kitchen-scale",
+      "issues": []
+    },
+    {
+      "id": "measure-counter-space",
+      "title": "How to Measure Counter Space Before Buying an Appliance",
+      "words": 566,
+      "image": "product-cutting-board",
+      "issues": []
+    },
+    {
+      "id": "small-kitchen-buying-checklist",
+      "title": "A Small-Kitchen Buying Checklist That Starts With Your Meals",
+      "words": 564,
+      "image": "product-cutting-board",
+      "issues": []
+    },
+    {
+      "id": "rice-cooker-vs-multicooker-one-person",
+      "title": "Rice Cooker vs Multicooker for One Person: Choose the Daily Job",
+      "words": 571,
+      "image": "product-cutting-board",
+      "issues": []
+    },
+    {
+      "id": "appliance-storage-vs-operating-space",
+      "title": "Appliance Storage vs Operating Space: Two Different Measurements",
+      "words": 588,
+      "image": "product-cutting-board",
+      "issues": []
+    },
+    {
+      "id": "small-kitchen-meal-prep-starter",
+      "title": "A Small-Kitchen Meal-Prep Setup Without Buying Everything",
+      "words": 561,
+      "image": "product-cutting-board",
+      "issues": []
+    }
+  ]
+}

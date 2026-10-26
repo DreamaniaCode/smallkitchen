@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ContentRecord {
+  kind        String
+  id          String
+  data        Json
+  revision    Int      @default(1)
+  updatedAt   DateTime @map("updated_at") @db.Timestamptz
+  updatedBy   String   @map("updated_by")
+  operationId String   @map("operation_id")
+  @@id([kind, id])
+  @@map("records")
+}
+
+model AuditEntry {
+  id        String   @id
+  kind      String
+  recordId  String   @map("record_id")
+  action    String
+  actor     String
+  createdAt DateTime @map("created_at") @db.Timestamptz
+  @@map("audit_log")
+}
+
+model GenerationJob {
+  id         String   @id
+  actor      String
+  provider   String
+  status     String
+  startedAt  DateTime @map("started_at") @db.Timestamptz
+  finishedAt DateTime? @map("finished_at") @db.Timestamptz
+  error      String?
+  result     Json?
+  @@map("generation_jobs")
+}
+
+model OwnerUser {
+ id String @id
+ email String @unique
+ passwordHash String @map("password_hash")
+ sessions OwnerSession[]
+ @@map("owner_users")
+}
+model OwnerSession {
+ tokenHash String @id @map("token_hash")
+ userId String @map("user_id")
+ expiresAt DateTime @map("expires_at") @db.Timestamptz
+ user OwnerUser @relation(fields:[userId],references:[id],onDelete:Cascade)
+ @@index([expiresAt])
+ @@map("owner_sessions")
+}
+model AuthAttempt {
+ email String @id
+ windowStart DateTime @map("window_start") @db.Timestamptz
+ count Int
+ @@map("auth_attempts")
+}

@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: kitchen
+      POSTGRES_DB: kitchen
+      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES}
+    volumes:
+      - kitchen-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kitchen -d kitchen"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  website:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      - SERVICE_URL_WEBSITE_3000
+      - DATABASE_URL=postgresql://kitchen:${SERVICE_PASSWORD_POSTGRES}@postgres:5432/kitchen
+      - APP_URL=${SERVICE_URL_WEBSITE_3000}
+      - OWNER_EMAILS=${OWNER_EMAILS:?}
+      - SETUP_TOKEN=${SERVICE_PASSWORD_64_SETUP}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.8-flash}
+volumes:
+  kitchen-postgres:

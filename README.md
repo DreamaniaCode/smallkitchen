@@ -1,2 +1,25 @@
-# smallkitchen
-smallkitchen
+# Small Kitchen Field Guide
+
+Self-hosted Next.js application for Coolify. PostgreSQL is the only content, session and generation-job store; Prisma 7 uses the pg adapter. No Supabase, Cloudflare D1 or ChatGPT identity dependency.
+
+## Coolify deployment
+
+Create a Docker Compose application from this repository, branch main, compose file /compose.yaml. Coolify generates SERVICE_PASSWORD_POSTGRES and SERVICE_PASSWORD_64_SETUP. Set OWNER_EMAILS and GEMINI_API_KEY in Coolify, choose an HTTPS website domain, and deploy. APP_URL must exactly match the public origin. The PostgreSQL service has no published port and persists on kitchen-postgres. Do not replace its generated password after initial database startup without an explicit database password migration.
+
+After deployment, visit /admin/setup/ yourself. Copy SERVICE_PASSWORD_64_SETUP from the hosting variables into the setup form, enter your allowed owner email and choose your website password. No default password exists. Setup can create only one owner and is disabled once that account exists. Remove the setup token from the hosting variables after setup. Sign in at /admin/.
+
+Optional separate database: deploy the Dockerfile application and set DATABASE_URL to a dedicated PostgreSQL database on the same private Docker network, APP_URL, OWNER_EMAILS and a random SETUP_TOKEN of at least 32 characters. Do not expose PostgreSQL to the Internet.
+
+The container runs an additive schema bootstrap and inserts missing source records at startup. Existing edited records are never overwritten. A single transaction and advisory lock serialize concurrent first starts. It imports 30 English articles, 34 keywords, 30 affiliate link records and 4 tasks; 20 articles remain drafts. No credential or production backup is included in Git.
+
+## Development and checks
+
+Copy .env.example to .env.local and fill local values. npm ci; npm run db:generate; set DATABASE_URL in the shell before npm run db:init; npm run dev. Next.js reads .env.local but the standalone initialization script reads process environment. npm test checks the content library, rendering, provider constraints and password/token handling. npm run build validates TypeScript and produces the standalone server. /api/health returns 200 only when PostgreSQL responds.
+
+## Operations
+
+Use Coolify scheduled PostgreSQL backups, verify restore to a separate database, and retain the named volume. Before changing schema, back up PostgreSQL. Passwords use salted scrypt, sessions are random opaque tokens whose hashes are stored in PostgreSQL, and cookies are HttpOnly/SameSite with Secure on HTTPS. Owner checks do not trust caller identity headers. Login/setup attempts are limited in PostgreSQL. Content writes use optimistic revisions and an atomic audit entry.
+
+Gemini configuration uses server-only GEMINI_API_KEY and GEMINI_MODEL. The generator consumes supplied research notes and never auto-publishes. Google returned HTTP 503 and timed out during the prior live test; successful live generation remains to be confirmed after Coolify configuration.
+
+15 licensed real category photos retain source and license information. They are not claims of exact-model testing. See assets/product-originals/LICENSES.md and data/*photo-catalog.json.
