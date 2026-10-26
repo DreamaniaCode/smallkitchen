@@ -4,7 +4,7 @@ Self-hosted Next.js application for Coolify. PostgreSQL is the only content, ses
 
 ## Coolify deployment
 
-Create a Docker Compose application from this repository, branch main, compose file /compose.yaml. Coolify generates SERVICE_PASSWORD_POSTGRES and SERVICE_PASSWORD_64_SETUP. Set OWNER_EMAILS and GEMINI_API_KEY in Coolify, choose an HTTPS website domain, and deploy. APP_URL must exactly match the public origin. The PostgreSQL service has no published port and persists on kitchen-postgres. Do not replace its generated password after initial database startup without an explicit database password migration.
+Create a Docker Compose application from this repository, branch main, compose file /compose.yaml. Coolify generates SERVICE_PASSWORD_POSTGRES and SERVICE_PASSWORD_64_SETUP. Set OWNER_EMAILS, APP_URL and GEMINI_API_KEY in Coolify, choose an HTTPS website domain, and deploy. APP_URL must exactly match the public origin. The PostgreSQL service has no published port and persists on kitchen-postgres. Do not replace its generated password after initial database startup without an explicit database password migration.
 
 After deployment, visit /admin/setup/ yourself. Copy SERVICE_PASSWORD_64_SETUP from the hosting variables into the setup form, enter your allowed owner email and choose your website password. No default password exists. Setup can create only one owner and is disabled once that account exists. Remove the setup token from the hosting variables after setup. Sign in at /admin/.
 

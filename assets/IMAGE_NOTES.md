@@ -1,6 +1,6 @@
 # Editorial image assets
 
-Created with the built-in Imagegen tool. Photorealistic illustrative imagery, not evidence of product testing. All public article images have an AI illustration caption. The original PNGs are retained in `assets/originals/`; WebP delivery files are in `public/images/`.
+Created with the built-in Imagegen tool. Photorealistic illustrative imagery, not evidence of product testing. These three illustrations have AI captions. Real licensed category photos are documented separately in product-originals/LICENSES.md and the data photo catalogs. The original PNGs are retained locally outside Git; WebP delivery files are in public/images/.
 
 ## Hero — public/images/hero.webp
 
