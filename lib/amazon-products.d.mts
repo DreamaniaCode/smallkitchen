@@ -1,1 +1,2 @@
 export function normalizeAsin(value:unknown):string;export function amazonConfigured(settings:Record<string,any>):boolean;export function affiliateProductUrl(asin:string,tag?:string):string;export function validateProduct(value:unknown):any;export function lookupAmazonProduct(settings:Record<string,any>,input:unknown,fetcher?:typeof fetch):Promise<any>;export function displayProduct(stored:any,settings?:Record<string,any>):Promise<any>;export function productBrief(product:any,provider?:string):any;
+export function productReference(product:any):any;

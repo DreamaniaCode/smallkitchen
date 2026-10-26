@@ -1,0 +1,1 @@
+export function parsePublicProduct(html:string,input:unknown):any;export function lookupPublicProduct(input:unknown,fetcher?:typeof fetch):Promise<any>;export function manualProduct(input:unknown,details:unknown):any;
