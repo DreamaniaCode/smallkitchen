@@ -23,6 +23,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/lib/public-product.mjs ./scripts/
 COPY --from=builder --chown=nextjs:nodejs /app/lib/amazon-products.mjs ./scripts/amazon-products.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/lib/generator.mjs ./scripts/generator.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/lib/article-tools.mjs ./scripts/article-tools.mjs
+COPY --from=builder --chown=nextjs:nodejs /app/lib/validation.mjs ./scripts/validation.mjs
 USER nextjs
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s CMD node -e "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
