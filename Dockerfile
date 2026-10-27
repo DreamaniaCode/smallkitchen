@@ -13,6 +13,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/scripts/init-db.mjs ./scripts/init-db.mjs
+COPY --from=builder --chown=nextjs:nodejs /app/scripts/create-password-reset.mjs ./scripts/create-password-reset.mjs
 COPY --from=builder --chown=nextjs:nodejs /app/infrastructure/schema.sql ./infrastructure/schema.sql
 COPY --from=builder --chown=nextjs:nodejs /app/data/seed.json ./data/seed.json
 COPY --from=builder --chown=nextjs:nodejs /app/scripts/check-provider.mjs ./scripts/check-provider.mjs

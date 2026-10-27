@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS owner_users(id text PRIMARY KEY,email text NOT NULL U
 CREATE TABLE IF NOT EXISTS owner_sessions(token_hash text PRIMARY KEY,user_id text NOT NULL REFERENCES owner_users(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL);
 CREATE INDEX IF NOT EXISTS owner_sessions_expiry ON owner_sessions(expires_at);
 CREATE TABLE IF NOT EXISTS auth_attempts(email text PRIMARY KEY,window_start timestamptz NOT NULL,count integer NOT NULL);
+CREATE TABLE IF NOT EXISTS owner_password_resets(token_hash text PRIMARY KEY,user_id text NOT NULL REFERENCES owner_users(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL);

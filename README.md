@@ -41,3 +41,8 @@ The default generator source reads the normal public Amazon.com /dp/ASIN page wi
 If a page is unavailable, the generator reveals a manual form for the exact product title, verified notes and real product photo URL. The owner confirms the product/photo match and permission to use it. This path works without Creators API eligibility. Manual and public-page product references retain provenance, source URL and their photo URL; image binaries are not downloaded. API-sourced references retain only the ASIN. Public snapshots are refreshed after a day when available; old snapshots retain their original checked date if the page becomes unavailable. No current price or rating is shown.
 
 On the website container, node scripts/check-product.mjs ASIN tests a public page; append --generate to verify one source-based draft without saving or publishing it.
+# Owner password recovery
+
+Open the website application in Coolify, select its website container under Terminal, and run `node scripts/create-password-reset.mjs your-owner-email` using an email listed in `OWNER_EMAILS`. The account must already exist. This creates a random one-time recovery code valid for 30 minutes; only its SHA-256 digest is stored in PostgreSQL. Creating another code invalidates the previous code for that owner.
+
+Open `/admin/reset/`, enter the code and your owner email, and choose your own new password. A successful reset consumes the code and invalidates all existing sessions in one database transaction. No email delivery service is configured; codes are available only through the hosting terminal. Keep terminal output private.
